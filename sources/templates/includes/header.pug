@@ -1,0 +1,56 @@
+block variables
+    - var path = self.htmlWebpackPlugin.options
+    - var pathToFile = (path.mode == 'development') ? "../../../sources/" : ""
+    
+
+
+mixin header(language)
+    .section-top
+        .container
+            .top-container
+                .phone
+                    a(href="tel:+4915129826667")
+                        svg(class="icon")
+                            use(xlink:href="#icon-phone")
+                        span.vd= path.file.tel
+                        span.vm Telefon
+
+                .mail
+                    a(href="mailto:" + path.file.mail)
+                        svg(class="icon")
+                            use(xlink:href="#icon-mail")
+                        span.vd= path.file.mail
+                        span.vm Email
+
+                .top-language
+                    a(href="./" title="Polnisch")
+                        svg(class="flag-" + language)
+                            use(xlink:href="#flag-pl") 
+                        span Polnisch
+
+    header.section-header.parallax(style="background-image: url('"+ pathToFile + path.file.imgBig +"')")
+        .header-container
+            .header-top
+                .logo
+                    a(href="#top")
+                        svg(class="logo")
+                            use(xlink:href="#logo")
+                .menu.vd
+                    ul
+                        each val, i in path.file.menu
+                            li
+                                a(href="#"+val.link class=val.link)
+                                    = val.text
+                .menu-mobile.vm
+                    .mobile
+                        svg(class="menu-h")
+                            use(xlink:href="#icon-menu")
+        .container
+            .section-center
+                .header-slogan
+                    h1!= path.file.titleBig
+
+                .header-keywords
+                    ul.ul-clear
+                        each val, i in path.file.keywords
+                            li.h3= val.key

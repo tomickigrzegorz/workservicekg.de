@@ -1,0 +1,41 @@
+.section-top {
+  color: $color-white;
+  background-color: $color-gray-dark;
+  @include font-size(14);
+  a {
+    position: relative;
+    text-decoration: none;
+    color: $color-white;
+  }
+}
+
+.top-container {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  .phone {
+    margin-right: 10px;
+    @include breakpoint(xs) {
+      margin-right: 50px;
+    }
+  }
+  .mail,
+  .phone {
+    svg {
+      width: 18px;
+      height: 18px;
+      fill: $color-white;
+    }
+  }
+}
+
+.top-language {
+  margin-left: auto;
+  text-transform: uppercase;
+  @include font-size(11);
+  svg {
+    max-width: 30px;
+    max-height: 15px;
+    vertical-align: middle;
+  }
+}

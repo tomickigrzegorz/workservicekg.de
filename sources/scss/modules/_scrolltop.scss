@@ -1,0 +1,36 @@
+.scroll-button {
+  width: 40px;
+  height: 40px;
+  background: $color-burgund;
+  color: $color-white;
+  border-radius: 5px;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  border: none;
+  visibility: visible;
+  cursor: pointer;
+  transition: all 1.2s;
+  outline: 0;
+  &:hover {
+    opacity: 1;
+  }
+  &--hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+  &::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-bottom: 7px solid $color-white;
+    margin: auto;
+    left: 0;
+    right: 0;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+  }
+}

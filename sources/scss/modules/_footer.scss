@@ -1,0 +1,6 @@
+.section-footer {
+  flex: 1;
+  @include font-size(12);
+  background-color: $color-black;
+  color: $color-gray;
+}
