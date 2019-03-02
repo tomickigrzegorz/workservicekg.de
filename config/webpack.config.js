@@ -42,7 +42,7 @@ module.exports = (env, argv) => {
       chunks: [entryName],
       minify: type.minify,
       mode: type.mode,
-      inlineSource: '.(css)$'
+      // inlineSource: '.(css)$'
       // inlineSource: '.(js|css)$',
     });
   });
@@ -157,7 +157,9 @@ module.exports = (env, argv) => {
       ),
       prodPlugin(
         new MiniCssExtractPlugin({
-          filename: 'vendor/css/[name].[hash].css'
+          // filename: 'vendor/css/index.[hash].css'
+          filename: "vendor/css/index.[hash].css",
+          // chunkFilename: "[id].css"
         }),
         argv
       ),
@@ -173,6 +175,7 @@ module.exports = (env, argv) => {
             `${OUTPUT_DIR}/assets/manifest.json`,
             `${OUTPUT_DIR}/favicon.ico`,
             `${OUTPUT_DIR}/vendor/js/*.js`,
+            `${OUTPUT_DIR}/vendor/css/*.css`,
             `${OUTPUT_DIR}/images/static/*.png`,
             `${OUTPUT_DIR}/images/parallax/*.jpg`,
             `${OUTPUT_DIR}/*.html`,
