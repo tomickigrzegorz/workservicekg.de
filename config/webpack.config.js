@@ -12,7 +12,8 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 
 const PUBLIC_PATH = 'http://somesite.com/';
 
-const entry = require('./entry.js');
+const ENTRY = require('./entry.js');
+const OUTPUT_DIR = 'dist';
 
 module.exports = (env, argv) => {
   const type =
@@ -32,11 +33,11 @@ module.exports = (env, argv) => {
         minify: false
       };
 
-  const entryHtmlPlugins = Object.keys(entry.html).map(entryName => {
-    const templateName = entryName === 'index' ? 'index' : 'index-de';
+  const entryHtmlPlugins = Object.keys(ENTRY.html).map(entryName => {
+    // const templateName = entryName === 'index' ? 'index' : 'index-pl';
     return new HtmlWebPackPlugin({
       filename: `${entryName}.html`,
-      template: `./sources/templates/${templateName}.pug`,
+      template: `./sources/templates/${entryName}.pug`,
       file: require(`../sources/data/${entryName}.json`),
       chunks: [entryName],
       minify: type.minify,
@@ -58,7 +59,7 @@ module.exports = (env, argv) => {
 
   return {
     devtool: devProdOption('source-map', 'none', argv),
-    entry: entry.html,
+    entry: ENTRY.html,
     output: output,
     module: {
       rules: [
@@ -167,13 +168,15 @@ module.exports = (env, argv) => {
           filename: 'service-worker.js',
           minify: true,
           navigateFallback: PUBLIC_PATH + 'index.html',
-          staticFileGlobsIgnorePatterns: [
-            /\.map$/,
-            /manifest\.json$/,
-            /\.css$/,
-            /\.txt$/,
-            /\.htaccess$/
-          ]
+          stripPrefix: OUTPUT_DIR,
+          staticFileGlobs: [
+            `${OUTPUT_DIR}/assets/manifest.json`,
+            `${OUTPUT_DIR}/favicon.ico`,
+            `${OUTPUT_DIR}/vendor/js/*.js`,
+            `${OUTPUT_DIR}/images/static/*.png`,
+            `${OUTPUT_DIR}/images/parallax/*.jpg`,
+            `${OUTPUT_DIR}/*.html`,
+          ],
         }),
         argv
       ),
