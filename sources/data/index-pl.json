@@ -1,0 +1,75 @@
+{
+  "head": {
+    "title": "Możemy coś za ciebie zrobić??? - WorkService KG",
+    "description": "Jesteśmy przedsiębiorstwem usługowym, zatrudniającym wykwalifikowanych pracowników z Europy Wschodniej i Azji. Zatrudniamy fachowców z różnych branż: spawaczy, ślusarzy, tokarzy, frezerów, elektryków, pracowników obsługujących i programujących urządzenia CNC, stolarzy, jak również pomocników i pracowników niewykwalifikowanych. Wszyscy oni mają jeden cel i jedno zadanie: wspomóc procesy produkcyjne naszych klientów."
+  },
+  "tel": "+49 15129826667",
+  "mail": "info@workservicekg.de",
+  "titleBig": "możemy coś<br> za ciebie zrobić???",
+  "imgBig": "images/parallax/images.jpg",
+  "keywords": [
+    {
+      "key": "spawacz"
+    },
+    {
+      "key": "ślusasz"
+    },
+    {
+      "key": "stolarz"
+    },
+    {
+      "key": "tokarz"
+    },
+    {
+      "key": "frezer"
+    },
+    {
+      "key": "elektryk"
+    },
+    {
+      "key": "pracownik produkcji"
+    }
+  ],
+  "menu": [
+    {
+      "link": "o-nas",
+      "text": "o nas"
+    },
+    {
+      "link": "nasza-oferta",
+      "text": "nasza oferta"
+    },
+    {
+      "link": "kontakt",
+      "text": "kontakt"
+    }
+  ],
+  "items": [
+    {
+      "bgColor": "bg-white",
+      "textColor": "text-black",
+      "className": "o-nas",
+      "title": "o nas",
+      "text": "Jesteśmy przedsiębiorstwem usługowym, zatrudniającym <strong>wykwalifikowanych pracowników</strong> z Europy Wschodniej i Azji. Zatrudniamy fachowców z różnych branż: spawaczy, ślusarzy, tokarzy, frezerów, elektryków, pracowników obsługujących i programujących urządzenia CNC, stolarzy, jak również pomocników i pracowników niewykwalifikowanych. Wszyscy oni mają jeden cel i jedno zadanie: <strong>wspomóc procesy produkcyjne naszych klientów</strong>. Możemy Ci pomóc, bo wiemy, jak pozyskać dobrego pracownika. Wysokie kwalifikacje naszych pracowników oznaczają wysoką jakość wykonywanych przez nich prac. To natomiast jest <strong>gwarancją Państwa zadowolenia</strong>.<br><br>WORKSERVICE KG ściśle współpracuje z firmą SPAWMET Sp. z o.o., która od 12 lat działa na rynku pracy w wielu branżach przemysłu ciężkiego. To dzięki jej wieloletniemu doświadczeniu jesteśmy pewni, że poradzimy sobie nawet z najtrudniejszymi zadaniami."
+    },
+    {
+      "bgColor": "bg-gray",
+      "textColor": "text-black",
+      "className": "nasza-oferta",
+      "title": "nasza oferta",
+      "text": "<h3>jacy są nasi fachowcy?</h3>Zatrudniamy fachowców i pomocników z Europy Wschodniej oraz Azji. <strong>Są to wysoko wykwalifikowani pracownicy z wieloletnim doświadczeniem</strong>. Ich wiedza powiązana jest z długą praktyką. W każdej grupie wysyłanej do Państwa znajduje się koordynator, który przynajmniej w stopniu podstawowym posługuje się językiem niemieckim. Wszyscy specjaliści potrafią natomiast czytać rysunki techniczne<br><br><h3>jak działamy?</h3>Wykonujemy usługi z zakresu obróbki metalu i drewna, prace elektryczne oraz podstawowe prace produkcyjne i pomocnicze. <strong>Usługi wykonywane są w wyznaczonym przez Państwa miejscu i czasie</strong>. Nasi pracownicy zadbają o wysoką jakość wykonywanych prac. Jedynym Państwa zadaniem będzie wprowadzenie ich w zakres obowiązków, przeszkolenie w miejscu pracy (również szkolenie BHP) i przekazanie do dyspozycji wszelkich potrzebnych narzędzi, sprzętu i odzieży ochronnej.<br><br><h3>jak się rozliczamy?</h3>Działamy w oparciu o umowę o dzieło (umowa na wykonanie usług) z rozliczeniem godzinowym naszych pracowników, co znaczenie obniża Państwa koszty produkcji. Każdy pracownik wykonuje swoją pracę zgodnie z przepisami kodeksu pracy. Rozliczenie odbywa się na podstawie ewidencji ilości przepracowanych godzin przez każdego pracownika. Stawka godzinowa zostanie ustalona w umowie.<br><br>Koszty związane z podróżą i noclegami pracowników zawarte są w stawce godzinowej. Oznacza to, że Państwo nie ponoszą żadnych dodatkowych kosztów związanych z przyjazdem pracowników na miejsce i ich pobytem. Również formalności załatwiane są przez nas.<br><br><h3>jakie są państwa korzyści?</h3>Przy zachowaniu wysokiej jakości wykonywanych prac:<ul class='ul-clear'><li><strong>oszczędzają</strong> Państwo swoje środki finansowe, nie ponosząc kosztów pracowniczych,</li><li>nie są Państwo związani <strong>żadnymi zobowiązaniami</strong> pracowniczymi,</li><li>zachowują Państwo <strong>pewność dotrzymania terminów</strong></li><li>mogą Państwo <strong>elastycznie reagować</strong> na koniunkturę i warunki rynkowe.</li></ul><br>Aby nawiązać współpracę, wystarczy skontaktować się z nami. W mailu prosimy o podanie informacji o specjalności, ilości potrzebnych pracowników i terminie rozpoczęcia prac. Otrzymają Państwo od nas potwierdzenie zlecenia, na podstawie którego skompletujemy zespół.<br><br>KONTAKT:"
+    },
+    {
+      "bgColor": "bg-gray-dark",
+      "textColor": "text-gray-light",
+      "className": "kontakt",
+      "title": "kontakt",
+      "text": "<div class='contact-item'><div class='address item'>Work Service KG<br>Brünner Straße 10<br>04209 Leipzig</div><div class='phone item'><a href='tel:+4915129826667'><span>Tel: +49 15129826667</span></a></div><div class='mail item'><a href='mailto:info@workservicekg.de'><span>Mail: info@workservicekg.de</span></a></div></div><div class='contact-item'><div class='cotb item'>Prezes Zarządu: Maciej Jan Szklarz</div><div class='law item'>Sąd Rejestrowy w Lipsku</div><div class='number item'>Numer HRA 18264</div><div class='nip item'>NIP: 1111111111111</div></div>"
+    }
+  ],
+  "schema": {
+    "datePublished": "2019-03-01",
+    "dateModified": "2019-03-01",
+    "author": "WorkService KG"
+  }
+}

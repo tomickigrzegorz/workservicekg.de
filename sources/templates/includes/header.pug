@@ -23,10 +23,18 @@ mixin header(language)
                         span.vm Email
 
                 .top-language
-                    a(href="./" title="Polnisch")
+                    if language === 'de'
+                        - var link = "index.html"
+                    else 
+                        - var link = "index-pl.html"
+                    a(href="./" + link)
                         svg(class="flag-" + language)
-                            use(xlink:href="#flag-pl") 
-                        span Polnisch
+                            use(xlink:href="#flag-" + language) 
+                        span
+                            if language === 'de'
+                               | Niemiecki
+                            else 
+                               | Polnisch
 
     header.section-header.parallax(style="background-image: url('"+ pathToFile + path.file.imgBig +"')")
         .header-container

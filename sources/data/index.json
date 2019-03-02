@@ -1,70 +1,70 @@
 {
   "head": {
-    "title": "WORKSERVICE KG - PL",
-    "description": "Jesteśmy przedsiębiorstwem usługowym, zatrudniającym wykwalifikowanych pracowników z Europy Wschodniej i Azji. Zatrudniamy fachowców z różnych branż: spawaczy, ślusarzy, tokarzy, frezerów, elektryków, pracowników obsługujących i programujących urządzenia CNC, stolarzy, jak również pomocników i pracowników niewykwalifikowanych. Wszyscy oni mają jeden cel i jedno zadanie: wspomóc procesy produkcyjne naszych klientów."
+    "title": "Was können wir für sie tun??? - WorkService KG",
+    "description": "Wir sind ein Dienstleistungsunternehmen, welches hochqualifizierte Fachkräfte aus Osteuropa und Asien anstellt. Bei uns arbeiten verschiedene Spezialisten: Schweißer, Schlosser, Dreher, Fräser, Elektriker, CNC-Bediener und Programmierer, Tischler, aber auch Hilfskräfte und Produktionsmitarbeiter. Sie alle haben zum Ziel, die Produktionsprozesse unserer Kunden zu unterstützen."
   },
   "tel": "+49 15129826667",
   "mail": "info@workservicekg.de",
-  "titleBig": "możemy coś<br> za ciebie zrobić???",
+  "titleBig": "was können<br> wir für sie tun???",
   "imgBig": "images/parallax/images.jpg",
   "keywords": [
     {
-      "key": "spawacz"
+      "key": "schweisser"
     },
     {
-      "key": "ślusasz"
+      "key": "schlosser"
     },
     {
-      "key": "stolarz"
+      "key": "tischler"
     },
     {
-      "key": "tokarz"
+      "key": "dreher"
     },
     {
-      "key": "frezer"
+      "key": "fräser"
     },
     {
-      "key": "elektryk"
+      "key": "elektriker"
     },
     {
-      "key": "pracownik produkcji"
+      "key": "hilfskraft"
     }
   ],
   "menu": [
     {
-      "link": "o-nas",
-      "text": "o nas"
+      "link": "über-uns",
+      "text": "über uns"
     },
     {
-      "link": "nasza-oferta",
-      "text": "nasza oferta"
+      "link": "unser-angebot",
+      "text": "unser angebot"
     },
     {
-      "link": "kontakt",
-      "text": "kontakt"
+      "link": "impressum",
+      "text": "impressum"
     }
   ],
   "items": [
     {
       "bgColor": "bg-white",
       "textColor": "text-black",
-      "className": "o-nas",
-      "title": "o nas",
-      "text": "Jesteśmy przedsiębiorstwem usługowym, zatrudniającym <strong>wykwalifikowanych pracowników</strong> z Europy Wschodniej i Azji. Zatrudniamy fachowców z różnych branż: spawaczy, ślusarzy, tokarzy, frezerów, elektryków, pracowników obsługujących i programujących urządzenia CNC, stolarzy, jak również pomocników i pracowników niewykwalifikowanych. Wszyscy oni mają jeden cel i jedno zadanie: <strong>wspomóc procesy produkcyjne naszych klientów</strong>. Możemy Ci pomóc, bo wiemy, jak pozyskać dobrego pracownika. Wysokie kwalifikacje naszych pracowników oznaczają wysoką jakość wykonywanych przez nich prac. To natomiast jest <strong>gwarancją Państwa zadowolenia</strong>.<br><br>WORKSERVICE KG ściśle współpracuje z firmą SPAWMET Sp. z o.o., która od 12 lat działa na rynku pracy w wielu branżach przemysłu ciężkiego. To dzięki jej wieloletniemu doświadczeniu jesteśmy pewni, że poradzimy sobie nawet z najtrudniejszymi zadaniami."
+      "className": "über-uns",
+      "title": "über uns",
+      "text": "Wir sind ein Dienstleistungsunternehmen, welches <storng>hochqualifizierte Fachkräfte</storng> aus Osteuropa und Asien anstellt. Bei uns arbeiten verschiedene Spezialisten: Schweißer, Schlosser, Dreher, Fräser, Elektriker, CNC-Bediener und Programmierer, Tischler, aber auch Hilfskräfte und Produktionsmitarbeiter. Sie alle haben zum Ziel, <strong>die Produktionsprozesse unserer Kunden zu unterstützen</strong>. Wir können auch Ihnen helfen, weil wir wissen, wie die besten Fachleute zu gewinnen und zu pflegen sind. Hohe Qualifikationen unserer Mitarbeiter bedeuten hohe Qualität der für Sie geleisteten Arbeiten, was bestimmt <strong>Ihre Zufriedenheit garantiert</strong>.<br><br>WORKSERVICE KG arbeitet eng mit der Firma SPAWMET Sp. z o.o. zusammen, welche seit 12 Jahren auf dem Arbeitsmarkt in vielen Bereichen der Schwerindustrie tätig ist. Eben dank dieser Zusammenarbeit und der mehrjährigen Erfahrung an Seite unseres Partners sind wir dessen sicher, dass wir sogar mit den schwersten Aufgaben zurechtkommen."
     },
     {
       "bgColor": "bg-gray",
       "textColor": "text-black",
-      "className": "nasza-oferta",
-      "title": "nasza oferta",
-      "text": "<h3>jacy są nasi fachowcy?</h3>Zatrudniamy fachowców i pomocników z Europy Wschodniej oraz Azji. <strong>Są to wysoko wykwalifikowani pracownicy z wieloletnim doświadczeniem</strong>. Ich wiedza powiązana jest z długą praktyką. W każdej grupie wysyłanej do Państwa znajduje się koordynator, który przynajmniej w stopniu podstawowym posługuje się językiem niemieckim. Wszyscy specjaliści potrafią natomiast czytać rysunki techniczne<br><br><h3>jak działamy?</h3>Wykonujemy usługi z zakresu obróbki metalu i drewna, prace elektryczne oraz podstawowe prace produkcyjne i pomocnicze. <strong>Usługi wykonywane są w wyznaczonym przez Państwa miejscu i czasie</strong>. Nasi pracownicy zadbają o wysoką jakość wykonywanych prac. Jedynym Państwa zadaniem będzie wprowadzenie ich w zakres obowiązków, przeszkolenie w miejscu pracy (również szkolenie BHP) i przekazanie do dyspozycji wszelkich potrzebnych narzędzi, sprzętu i odzieży ochronnej.<br><br><h3>jak się rozliczamy?</h3>Działamy w oparciu o umowę o dzieło (umowa na wykonanie usług) z rozliczeniem godzinowym naszych pracowników, co znaczenie obniża Państwa koszty produkcji. Każdy pracownik wykonuje swoją pracę zgodnie z przepisami kodeksu pracy. Rozliczenie odbywa się na podstawie ewidencji ilości przepracowanych godzin przez każdego pracownika. Stawka godzinowa zostanie ustalona w umowie.<br><br>Koszty związane z podróżą i noclegami pracowników zawarte są w stawce godzinowej. Oznacza to, że Państwo nie ponoszą żadnych dodatkowych kosztów związanych z przyjazdem pracowników na miejsce i ich pobytem. Również formalności załatwiane są przez nas.<br><br><h3>jakie są państwa korzyści?</h3>Przy zachowaniu wysokiej jakości wykonywanych prac:<ul class='ul-clear'><li><strong>oszczędzają</strong> Państwo swoje środki finansowe, nie ponosząc kosztów pracowniczych,</li><li>nie są Państwo związani <strong>żadnymi zobowiązaniami</strong> pracowniczymi,</li><li>zachowują Państwo <strong>pewność dotrzymania terminów</strong></li><li>mogą Państwo <strong>elastycznie reagować</strong> na koniunkturę i warunki rynkowe.</li></ul><br>Aby nawiązać współpracę, wystarczy skontaktować się z nami. W mailu prosimy o podanie informacji o specjalności, ilości potrzebnych pracowników i terminie rozpoczęcia prac. Otrzymają Państwo od nas potwierdzenie zlecenia, na podstawie którego skompletujemy zespół.<br><br>KONTAKT:"
+      "className": "unser-angebot",
+      "title": "unser angebot",
+      "text": "<h3>wie sind unsere fachkräfte?</h3>Wir stellen Fach- und Hilfskräfte aus Osteuropa und Asien an. Es sind <strong>hochqualifizierte Mitarbeiter mit jahrelanger Erfahrung</strong>. Ihr Wissen wurden mit praktischen Fertigkeiten ergänzt. Jede Gruppe von Mitarbeitern hat ihren Koordinator, der über Grunddeutschkenntnisse verfügt. Alle Fachkräfte können technische Zeichnungen lesen.<br><br><h3>wie funktioniert das?</h3>Wir leisten Arbeiten im Bereich Metall- und Holzbearbeitung, Elektroarbeiten sowie Produktions- und Hilfsarbeiten. Die Leistungen werden <strong>an einem von Ihnen angewiesenen Ort und in einem von Ihnen angesetzten Termin</strong> vollzogen. Unsere Mitarbeiter kümmern sich für hohe Qualität der geleisteten Arbeiten. Ihre einzige Aufgabe besteht in der Einführung der Mitarbeiter in Aufgabenbereich und Einschulung am Arbeitsort (auch im Bereich Arbeitsschutz). Sie stellen auch notwendige Werkzeuge, Ausrüstung und Schutzkleidung zur Verfügung. Den Rest übernehmen wir.<br><br><h3>wie wird es abgerechnet?</h3>Wir arbeiten aufgrund eines Werkvertrages mit Stundenabrechnung unserer Mitarbeiter, was wesentlich Ihre Produktionskosten herabsetzt. Jeder Mitarbeiter leistet Ihre Arbeit gem. den geltenden Arbeitsvorschriften. Die Abrechnung erfolgt auf der Basis vom Register der Arbeitsstunden jedes Mitarbeiters. Der Stundensatz wird im Vertrag festgelegt. <br>Die Reise- und Unterkunftskosten sind im Stundensatz enthalten. Das bedeutet, dass Sie keine zusätzlichen Kosten zu tragen haben. Wir erledigen auch alle Formalitäten.<br><br><h3>IHRE VORTEILE?</h3><ul class='ul-clear'><li><strong>Sie sparen</strong> Ihre Finanzmittel, weil Sie keine Personalkosten zu tragen haben;</li><li><strong>Sie vermeiden die Personalverbindlichkeiten;</strong></li><li>Sie haben die Sicherheit, dass Sie <strong>Ihre Produktionstermine erhalten</strong>;</li><li>Sie können <strong>flexibel</strong> auf die Konjunktur und Marktkonditionen reagieren.</li></ul><br>Und dabei garantieren wir, dass <strong>die hohe Qualität Ihrer Arbeiten aufrechterhalten</strong> wird:<br>Setzen Sie sich bitte mit uns in Kontakt, um die Zusammenarbeit zu schließen. In der Mailnachricht geben Sie uns bitte Bescheid über die Branche, Anzahl der notwendigen Mitarbeiter sowie über den Einsatztermin. Sie erhalten von uns eine Auftragsbestätigung, auf derer Grundlage wir das entsprechende Team wählen.<br><br>KONTAKT:"
     },
     {
       "bgColor": "bg-gray-dark",
       "textColor": "text-gray-light",
-      "className": "kontakt",
-      "title": "kontakt",
-      "text": ""
+      "className": "impressum",
+      "title": "impressum",
+      "text": "<div class='contact-item'><div class='address item'>Work Service KG<br>Brünner Straße 10<br>04209 Leipzig</div><div class='phone item'><a href='tel:+4915129826667'><span>Tel: +49 15129826667</span></a></div><div class='mail item'><a href='mailto:info@workservicekg.de'><span>Mail: info@workservicekg.de</span></a></div></div><div class='contact-item'><div class='cotb item'>Geschäftsführer: Maciej Jan Szklarz</div><div class='law item'>Registergericht: Amtsgericht Leipzig</div><div class='number item'>Registernummer: HRA 18264</div><div class='nip item'>Ust.-Nummer: 1111111111111</div></div>"
     }
   ],
   "schema": {

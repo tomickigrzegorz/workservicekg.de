@@ -3,7 +3,7 @@ block variables
 - var pathToFile = (path.mode == 'development') ? "../../../sources/" : ""
 
 doctype html
-html(lang="de", dir="ltr" itemscope itemtype="http://schema.org/WebPage")
+html(lang="pl", dir="ltr" itemscope itemtype="http://schema.org/WebPage")
 
     include ./includes/head.pug
     include ./includes/header.pug
@@ -15,7 +15,7 @@ html(lang="de", dir="ltr" itemscope itemtype="http://schema.org/WebPage")
     body
 
         +svgLogo()
-        +header("pl")
+        +header("de")
 
         main(class="main")
                 each val, i in path.file.items
@@ -44,7 +44,7 @@ html(lang="de", dir="ltr" itemscope itemtype="http://schema.org/WebPage")
                 "author": "#{path.file.schema.author}",
                 "datePublished": "#{path.file.schema.datePublished}",
                 "dateModified": "#{path.file.schema.dateModified}",
-                "headline": "Website des Unternehmens"
+                "headline": "Storna firmowa"
             }
 
         include ./includes/footer.pug
