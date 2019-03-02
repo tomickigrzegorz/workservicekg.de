@@ -81,9 +81,7 @@
         @include font-size(18);
         color: $color-black;
         text-decoration: none;
-        text-transform: uppercase; // @include breakpoint(sm) {
-        //   margin-left: 15px;
-        // }
+        text-transform: uppercase;
         &::after {
           content: '';
           display: block;

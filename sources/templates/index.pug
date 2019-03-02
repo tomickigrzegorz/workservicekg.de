@@ -19,7 +19,7 @@ html(lang="de", dir="ltr" itemscope itemtype="http://schema.org/WebPage")
 
         main(class="main")
                 each val, i in path.file.items
-                    section(id=val.className class='section ' + val.bgColor + ' ' + val.textColor)
+                    section(id=val.title.replace(' ', '-'))
                         .container
                             h2= val.title
                             .section_description!= val.text
@@ -40,11 +40,18 @@ html(lang="de", dir="ltr" itemscope itemtype="http://schema.org/WebPage")
             {
                 "@context": "http://schema.org/",
                 "@type": "WebSite",
-                "publisher": "strona.pl",
+                "publisher": "workservicekg.de",
                 "author": "#{path.file.schema.author}",
                 "datePublished": "#{path.file.schema.datePublished}",
                 "dateModified": "#{path.file.schema.dateModified}",
                 "headline": "Website des Unternehmens"
             }
+
+        //- script.
+        //-     if('serviceWorker' in navigator) {
+        //-         navigator.serviceWorker
+        //-             .register('/sw.js')
+        //-             .then(function() { console.log("Service Worker Registered"); });
+        //-     }
 
         include ./includes/footer.pug

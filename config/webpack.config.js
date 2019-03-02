@@ -10,7 +10,7 @@ const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
-const PUBLIC_PATH = 'http://somesite.com/';
+const PUBLIC_PATH = 'http://www.workservicekg.de';
 
 const ENTRY = require('./entry.js');
 const OUTPUT_DIR = 'dist';
@@ -50,11 +50,6 @@ module.exports = (env, argv) => {
   const output = {
     path: path.resolve(__dirname, '../dist'),
     filename: 'vendor/js/index.[hash].js'
-    // filename: chunkData => {
-    //   return chunkData.chunk.name === 'index'
-    //     ? 'vendor/js/index.[hash].js'
-    //     : 'vendor/js/article.[hash].js';
-    // }
   };
 
   return {
@@ -117,12 +112,6 @@ module.exports = (env, argv) => {
               options: {
                 sourceMap: true
               }
-            },
-            {
-              loader: 'sass-resources-loader',
-              options: {
-                resources: ['./sources/scss/style.scss']
-              }
             }
           ]
         },
@@ -131,8 +120,10 @@ module.exports = (env, argv) => {
           test: /\.(jpe?g|png|gif|svg)$/i,
           loader: 'file-loader',
           options: {
-            useRelativePath: true,
-            name: '[name].[ext]'
+            name: '[name]-[hash:8].[ext]',
+            outputPath: argv.mode === 'production' ? '/images/' : '',
+            publicPath: argv.mode === 'production' ? '../../images/' : '',
+            useRelativePath: true
           }
         },
         {
@@ -157,18 +148,16 @@ module.exports = (env, argv) => {
       ),
       prodPlugin(
         new MiniCssExtractPlugin({
-          // filename: 'vendor/css/index.[hash].css'
           filename: "vendor/css/index.[hash].css",
-          // chunkFilename: "[id].css"
         }),
         argv
       ),
       prodPlugin(
         new SWPrecacheWebpackPlugin({
-          cacheId: 'gt',
+          cacheId: 'kg',
           dontCacheBustUrlsMatching: /\.\w{8}\./,
-          filename: 'service-worker.js',
-          minify: true,
+          filename: 'sw.js',
+          minify: false,
           navigateFallback: PUBLIC_PATH + 'index.html',
           stripPrefix: OUTPUT_DIR,
           staticFileGlobs: [
@@ -177,7 +166,8 @@ module.exports = (env, argv) => {
             `${OUTPUT_DIR}/vendor/js/*.js`,
             `${OUTPUT_DIR}/vendor/css/*.css`,
             `${OUTPUT_DIR}/images/static/*.png`,
-            `${OUTPUT_DIR}/images/parallax/*.jpg`,
+            `${OUTPUT_DIR}/images/*.jpg`,
+            `${OUTPUT_DIR}/images/*.png`,
             `${OUTPUT_DIR}/*.html`,
           ],
         }),
@@ -186,7 +176,7 @@ module.exports = (env, argv) => {
       prodPlugin(
         new CopyWebpackPlugin([
           { from: 'sources/assets/', to: 'assets/' },
-          { from: 'sources/images/', to: 'images/' },
+          { from: 'sources/images/static/', to: 'images/static' },
           { from: 'sources/assets/favicon.ico', to: './' },
           { from: 'sources/assets/.htaccess', to: './' },
           { from: 'sources/assets/robots.txt', to: './' },

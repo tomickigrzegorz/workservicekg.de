@@ -9,7 +9,7 @@ mixin header(language)
         .container
             .top-container
                 .phone
-                    a(href="tel:+4915129826667")
+                    a(href="tel:" +  path.file.tel)
                         svg(class="icon")
                             use(xlink:href="#icon-phone")
                         span.vd= path.file.tel
@@ -36,7 +36,7 @@ mixin header(language)
                             else 
                                | Polnisch
 
-    header.section-header.parallax(style="background-image: url('"+ pathToFile + path.file.imgBig +"')")
+    header.section-header.parallax
         .header-container
             .header-top
                 .logo
@@ -47,7 +47,7 @@ mixin header(language)
                     ul
                         each val, i in path.file.menu
                             li
-                                a(href="#"+val.link class=val.link)
+                                a(href="#"+val.text.replace(' ', '-'))
                                     = val.text
                 .menu-mobile.vm
                     .mobile
