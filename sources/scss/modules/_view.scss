@@ -32,6 +32,7 @@ h2 {
 }
 
 h3 {
+  font-family: 'Roboto', sans-serif;
   text-transform: uppercase;
   color: $color-burgund;
 }
@@ -100,7 +101,7 @@ section {
   background-position: center center;
   background-attachment: scroll;
   background-size: cover;
-  @media (min-width: 900px) {
+  @include breakpoint(900px) {
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -147,6 +148,35 @@ section {
       fill: $color-gray-darken;
       width: 20px;
       height: 20px;
+    }
+  }
+  .contact-item {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    @include breakpoint(xs) {
+      width: 50%;
+    }
+    @include breakpoint(sm) {
+      width: 35%;
+    }
+    @include breakpoint(md) {
+      width: 30%;
+    }
+    @include breakpoint(lg) {
+      width: 27%;
+    }
+    line-height: 1.5;
+    margin-top: 20px;
+    a {
+      color: $color-gray-light;
+      &:hover {
+        color: $color-white;
+      }
+    }
+    .phone,
+    .mail {
+      margin: 0;
     }
   }
 }
