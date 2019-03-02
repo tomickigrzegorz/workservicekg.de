@@ -8,6 +8,7 @@ const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const PUBLIC_PATH = 'http://www.workservicekg.de';
@@ -42,7 +43,7 @@ module.exports = (env, argv) => {
       chunks: [entryName],
       minify: type.minify,
       mode: type.mode,
-      // inlineSource: '.(css)$'
+      inlineSource: '.(css)$'
       // inlineSource: '.(js|css)$',
     });
   });
@@ -103,6 +104,11 @@ module.exports = (env, argv) => {
                 plugins: () => [
                   require('autoprefixer')({
                     browsers: ['> 1%', 'last 2 versions']
+                  }),
+                  require('postcss-url')({
+                    url: 'inline',
+                    maxSize: 50
+                    // assetsPath: root('dist')
                   })
                 ]
               }
@@ -122,7 +128,7 @@ module.exports = (env, argv) => {
           options: {
             name: '[name]-[hash:8].[ext]',
             outputPath: argv.mode === 'production' ? '/images/' : '',
-            publicPath: argv.mode === 'production' ? '../../images/' : '',
+            publicPath: argv.mode === 'production' ? './images/' : '',
             useRelativePath: true
           }
         },
@@ -137,7 +143,17 @@ module.exports = (env, argv) => {
         }
       ]
     },
-    optimization: {},
+    optimization: {
+      minimizer: [
+        new UglifyJsPlugin({
+          uglifyOptions: {
+            output: {
+              comments: false
+            }
+          }
+        })
+      ]
+    },
     plugins: [
       prodPlugin(
         new CleanWebpackPlugin('dist', {
