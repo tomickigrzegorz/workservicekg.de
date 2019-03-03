@@ -25,7 +25,8 @@ module.exports = (env, argv) => {
         minify: {
           removeComments: true,
           collapseWhitespace: true,
-          removeScriptTypeAttributes: true
+          removeScriptTypeAttributes: true,
+          removeStyleLinkTypeAttributes: true
         }
       }
       : {
@@ -35,10 +36,11 @@ module.exports = (env, argv) => {
       };
 
   const entryHtmlPlugins = Object.keys(ENTRY.html).map(entryName => {
-    // const templateName = entryName === 'index' ? 'index' : 'index-pl';
+    const templateName = entryName === ('index-pl' || 'index-de') ? 'index' : 'index';
+    const fileName = entryName === 'index-de' ? 'index' : 'index-pl';
     return new HtmlWebPackPlugin({
-      filename: `${entryName}.html`,
-      template: `./sources/templates/${entryName}.pug`,
+      filename: `${fileName}.html`,
+      template: `./sources/templates/${templateName}.pug`,
       file: require(`../sources/data/${entryName}.json`),
       chunks: [entryName],
       minify: type.minify,
@@ -180,7 +182,7 @@ module.exports = (env, argv) => {
             `${OUTPUT_DIR}/assets/manifest.json`,
             `${OUTPUT_DIR}/favicon.ico`,
             `${OUTPUT_DIR}/vendor/js/*.js`,
-            `${OUTPUT_DIR}/vendor/css/*.css`,
+            // `${OUTPUT_DIR}/vendor/css/*.css`,
             `${OUTPUT_DIR}/images/static/*.png`,
             `${OUTPUT_DIR}/images/*.jpg`,
             `${OUTPUT_DIR}/images/*.png`,

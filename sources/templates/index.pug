@@ -1,9 +1,10 @@
 block variables
 - var path = self.htmlWebpackPlugin.options
 - var pathToFile = (path.mode == 'development') ? "../../../sources/" : ""
+- var tel = path.file.tel.replace(" ", "");
 
 doctype html
-html(lang="de", dir="ltr" itemscope itemtype="http://schema.org/WebPage")
+html(lang=path.file.lang, dir="ltr" itemscope itemtype="http://schema.org/WebPage")
 
     include ./includes/head.pug
     include ./includes/header.pug
@@ -15,7 +16,7 @@ html(lang="de", dir="ltr" itemscope itemtype="http://schema.org/WebPage")
     body
 
         +svgLogo()
-        +header("pl")
+        +header(path.file.lang)
 
         main(class="main")
                 each val, i in path.file.items
@@ -25,7 +26,7 @@ html(lang="de", dir="ltr" itemscope itemtype="http://schema.org/WebPage")
                             .section_description!= val.text
                                 if i === 1
                                     .phone
-                                        a(href="tel:+4915129826667")
+                                        a(href="tel:" + tel)
                                             svg(class="icon")
                                                 use(xlink:href="#icon-phone")
                                             span= path.file.tel
@@ -39,12 +40,13 @@ html(lang="de", dir="ltr" itemscope itemtype="http://schema.org/WebPage")
         script(type='application/ld+json').
             {
                 "@context": "http://schema.org/",
-                "@type": "WebSite",
+                "@type": "WebPage",
                 "publisher": "workservicekg.de",
                 "author": "#{path.file.schema.author}",
                 "datePublished": "#{path.file.schema.datePublished}",
                 "dateModified": "#{path.file.schema.dateModified}",
-                "headline": "Website des Unternehmens"
+                "url": "http://www.workservicekg.de",
+                "headline": "#{path.file.head.description}"
             }
 
         //- script.

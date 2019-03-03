@@ -3,6 +3,7 @@
     "title": "Hochqualifizierte Fachkräfte Aus Osteuropa und Asien anstellt",
     "description": "Wir sind ein Dienstleistungsunternehmen, welches hochqualifizierte Fachkräfte aus Osteuropa und Asien anstellt. Bei uns arbeiten verschiedene Spezialisten: Schweißer, Schlosser, Dreher, Fräser, Elektriker, CNC-Bediener und Programmierer, Tischler, aber auch Hilfskräfte und Produktionsmitarbeiter. Sie alle haben zum Ziel, die Produktionsprozesse unserer Kunden zu unterstützen."
   },
+  "lang": "de",
   "tel": "+49 15129826667",
   "mail": "info@workservicekg.de",
   "titleBig": "was können<br> wir für sie tun???",
@@ -55,8 +56,8 @@
     }
   ],
   "schema": {
-    "datePublished": "2019-03-01",
-    "dateModified": "2017-03-01",
+    "datePublished": "2019-03-02",
+    "dateModified": "2019-03-02",
     "author": "WorkService KG"
   }
 }

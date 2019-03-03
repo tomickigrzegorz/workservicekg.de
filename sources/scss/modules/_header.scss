@@ -1,19 +1,14 @@
 .section-header {
-  padding-bottom: 20px;
-  .section-center {
-    margin-top: 100px;
-    @include breakpoint(xs) {
-      margin-top: 150px;
-    }
-  }
-  @include breakpoint(xs) {
-    height: 330px;
+  display: flex;
+  align-items: center;
+  @include breakpoint(320px) {
+    min-height: 300px;
   }
   @include breakpoint(sm) {
-    height: 430px;
+    min-height: 450px;
   }
-  @include breakpoint(md) {
-    height: 450px;
+  @include breakpoint(lg) {
+    min-height: 550px;
   }
 }
 
@@ -36,22 +31,6 @@
   }
   &.header-top {
     background: none;
-  }
-  &.sticky {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: $color-white;
-    max-width: 100%;
-    .menu-mobile {
-      position: fixed;
-      z-index: 3;
-      right: 15px;
-    }
-    .header-top {
-      margin: 6px 15px 0;
-    }
   }
 }
 
@@ -108,7 +87,6 @@
 
 .header-slogan {
   position: relative;
-  z-index: 2;
   h1 {
     font-family: 'Rubik', sans-serif;
     @include font-size(25);
@@ -120,7 +98,6 @@
     }
     line-height: 120%;
     text-transform: uppercase;
-    padding: 0;
     text-align: center;
     color: $color-white;
     text-shadow: 0 0 15px $color-gray-darken;

@@ -1,15 +1,23 @@
 block variables
     - var path = self.htmlWebpackPlugin.options
     - var pathToFile = (path.mode == 'development') ? "../../../sources/" : ""
-    
-
+    - var tel = path.file.tel.replace(" ", "");
 
 mixin header(language)
+    if language === 'de'
+        - var link = "index-pl.html"
+        - var flag = "flag-pl"
+        - var flagText = "Polnisch"
+    else 
+        - var link = "index.html"
+        - var flag = "flag-de"
+        - var flagText = "Niemiecki"
+
     .section-top
         .container
             .top-container
                 .phone
-                    a(href="tel:" +  path.file.tel)
+                    a(href="tel:" +  tel)
                         svg(class="icon")
                             use(xlink:href="#icon-phone")
                         span.vd= path.file.tel
@@ -23,18 +31,10 @@ mixin header(language)
                         span.vm Email
 
                 .top-language
-                    if language === 'de'
-                        - var link = "index.html"
-                    else 
-                        - var link = "index-pl.html"
                     a(href="./" + link)
-                        svg(class="flag-" + language)
-                            use(xlink:href="#flag-" + language) 
-                        span
-                            if language === 'de'
-                               | Niemiecki
-                            else 
-                               | Polnisch
+                        svg(class=flag)
+                            use(xlink:href="#"+ flag) 
+                        span= flagText
 
     header.section-header.parallax
         .header-container
@@ -54,11 +54,10 @@ mixin header(language)
                         svg(class="menu-h")
                             use(xlink:href="#icon-menu")
         .container
-            .section-center
-                .header-slogan
-                    h1!= path.file.titleBig
+            .header-slogan
+                h1!= path.file.titleBig
 
-                .header-keywords
-                    ul.ul-clear
-                        each val, i in path.file.keywords
-                            li.h3= val.key
+            .header-keywords
+                ul.ul-clear
+                    each val, i in path.file.keywords
+                        li= val.key
