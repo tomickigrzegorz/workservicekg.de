@@ -72,11 +72,11 @@
       }
     }
   }
-  #hamburger-on {
-    display: none !important;
+  .hamburger-on {
+    display: none;
   }
-  #hamburger-off {
-    display: block !important;
+  .hamburger-off {
+    display: block;
   }
   .menu-mobile {
     position: fixed;
@@ -85,6 +85,6 @@
   }
 }
 
-#hamburger-off {
-  display: none !important;
+.hamburger-off {
+  display: none;
 }
