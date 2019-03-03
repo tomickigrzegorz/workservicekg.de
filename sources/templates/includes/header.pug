@@ -51,8 +51,12 @@ mixin header(language)
                                     = val.text
                 .menu-mobile.vm
                     .mobile
-                        svg(class="menu-h")
-                            use(xlink:href="#icon-menu")
+                        div.hamburger-on
+                            svg(class="menu-h")
+                                use(xlink:href="#hamburger-on")
+                        div.hamburger-off
+                            svg(class="menu-h")
+                                use(xlink:href="#hamburger-off")
         .container
             .header-slogan
                 h1!= path.file.titleBig

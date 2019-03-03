@@ -4,13 +4,11 @@ var ticking = false;
 var idOfHeader = '.header-container';
 var eleHeader = null;
 
-
 const classes = {
   pinned: 'header-pin',
   unpinned: 'header-unpin',
   top: 'header-top'
 };
-
 
 function onScroll() {
   currentScrollY = window.pageYOffset;
@@ -22,7 +20,6 @@ function onScroll() {
   }
   requestTick();
 }
-
 
 function requestTick() {
   if (!ticking) {
@@ -41,7 +38,6 @@ function update() {
   ticking = false;
 }
 
-
 function pin() {
   if (eleHeader.classList.contains(classes.unpinned)) {
     eleHeader.classList.remove(classes.unpinned);
@@ -49,15 +45,17 @@ function pin() {
   }
 }
 
-
 function unpin() {
-  if (eleHeader.classList.contains(classes.pinned) || !eleHeader.classList.contains(classes.unpinned)) {
+  if (
+    eleHeader.classList.contains(classes.pinned) ||
+    !eleHeader.classList.contains(classes.unpinned)
+  ) {
     eleHeader.classList.remove(classes.pinned);
     eleHeader.classList.add(classes.unpinned);
   }
 }
 
-window.addEventListener('load', function () {
+window.addEventListener('load', function() {
   currentScrollY = window.pageYOffset;
   if (currentScrollY <= 120) {
     document.querySelector('.header-container').classList.add(classes.top);

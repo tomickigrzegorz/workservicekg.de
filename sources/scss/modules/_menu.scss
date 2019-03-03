@@ -72,16 +72,16 @@
       }
     }
   }
+  .menu-mobile {
+    position: fixed;
+    z-index: 3;
+    right: 15px;
+  }
   .hamburger-on {
     display: none;
   }
   .hamburger-off {
     display: block;
-  }
-  .menu-mobile {
-    position: fixed;
-    z-index: 3;
-    right: 15px;
   }
 }
 

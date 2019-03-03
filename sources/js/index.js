@@ -5,8 +5,8 @@ import './modules/smoothScroll';
 
 import '../../sources/scss/style.scss';
 
-window.addEventListener('load', function () {
-  document.querySelector('.menu').addEventListener('click', function () {
+window.addEventListener('load', function() {
+  document.querySelector('.menu').addEventListener('click', function() {
     document.body.classList.remove('menu-on');
   });
 });
