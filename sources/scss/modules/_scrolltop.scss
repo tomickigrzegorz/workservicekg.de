@@ -1,12 +1,12 @@
 .scroll-button {
+  position: fixed;
   width: 40px;
   height: 40px;
+  right: 20px;
+  bottom: 20px;
   background: $color-burgund;
   color: $color-white;
   border-radius: 5px;
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
   border: none;
   visibility: visible;
   cursor: pointer;

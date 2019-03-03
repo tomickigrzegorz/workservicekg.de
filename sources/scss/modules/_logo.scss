@@ -1,0 +1,13 @@
+.logo {
+  width: 150px;
+  height: 70px;
+  margin-top: 3px;
+  @include breakpoint(sm) {
+    width: 200px;
+    height: 90px;
+  }
+}
+
+#logo {
+  fill: $color-burgund;
+}

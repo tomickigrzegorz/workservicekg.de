@@ -1,3 +1,5 @@
+@import "logo";
+@import "menu";
 .section-header {
   display: flex;
   align-items: center;
@@ -31,57 +33,7 @@
   }
   &.header-top {
     background: none;
-  }
-}
-
-.logo {
-  width: 150px;
-  height: 70px;
-  margin-top: 3px;
-  @include breakpoint(sm) {
-    width: 200px;
-    height: 90px;
-  }
-}
-
-#logo {
-  fill: $color-burgund;
-}
-
-.menu {
-  @include hide-on(511px);
-  ul {
-    padding: 0;
-    li {
-      display: inline-block;
-      margin-left: 10px;
-      a {
-        font-family: 'Roboto Condensed', sans-serif;
-        @include font-size(18);
-        color: $color-black;
-        text-decoration: none;
-        text-transform: uppercase;
-        &::after {
-          content: '';
-          display: block;
-          margin-bottom: 5px;
-          width: 0;
-          height: 2px;
-          background: $color-burgund;
-          transition: width .3s;
-        }
-        &:hover::after {
-          width: 100%;
-        }
-        &.active {
-          font-weight: 700;
-          &::after {
-            width: 100%;
-            height: 2px;
-          }
-        }
-      }
-    }
+    top: 40px;
   }
 }
 
@@ -90,31 +42,31 @@
   h1 {
     font-family: 'Rubik', sans-serif;
     @include font-size(25);
+    line-height: 120%;
+    text-transform: uppercase;
+    text-align: center;
+    color: $color-white;
+    text-shadow: 0 0 15px $color-gray-darken;
     @include breakpoint(xs) {
       @include font-size(30);
     }
     @include breakpoint(sm) {
       @include font-size(55);
     }
-    line-height: 120%;
-    text-transform: uppercase;
-    text-align: center;
-    color: $color-white;
-    text-shadow: 0 0 15px $color-gray-darken;
   }
   &::before {
-    border-bottom: 4px solid $color-red;
     content: '';
     position: absolute;
+    border-bottom: 4px solid $color-red;
     left: 0;
     right: 0;
     width: 150px;
     bottom: -5px;
+    margin: 0 auto;
     @include breakpoint(xs) {
       bottom: -10px;
       width: 250px;
     }
-    margin: 0 auto;
   }
 }
 
@@ -137,6 +89,13 @@
   &::before {
     content: "";
     background-color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    bottom: -5px;
+    margin: 0 auto;
+    z-index: -1;
     height: 60px;
     @include breakpoint(xs) {
       height: 55px;
@@ -147,68 +106,7 @@
     @include breakpoint(sm) {
       height: 30px;
     }
-    position: absolute;
-    left: 0;
-    right: 0;
-    width: 100%;
-    bottom: -5px;
-    margin: 0 auto;
-    z-index: -1;
   }
-}
-
-.menu-h {
-  cursor: pointer;
-  width: 30px;
-  height: 30px;
-  fill: $color-white;
-  background-color: $color-gray-darken;
-  border-radius: 5px;
-  padding: 7px 8px;
-  z-index: 3;
-}
-
-.menu-on {
-  overflow: hidden;
-  .menu {
-    display: block !important;
-    position: fixed;
-    background-color: rgba(0, 0, 0, .7);
-    z-index: 2;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    text-align: center;
-    height: 100vh;
-    ul {
-      margin-top: 70px;
-      li {
-        display: block;
-        margin-bottom: 20px;
-        a {
-          color: $color-white;
-          margin-left: 0;
-          @include font-size(20);
-        }
-      }
-    }
-  }
-  #hamburger-on {
-    display: none !important;
-  }
-  #hamburger-off {
-    display: block !important;
-  }
-  .menu-mobile {
-    position: fixed;
-    z-index: 3;
-    right: 15px;
-  }
-}
-
-#hamburger-off {
-  display: none !important;
 }
 
 .header-unpin {
@@ -222,6 +120,23 @@
   box-shadow: 0px -9px 26px 6px rgba(0, 0, 0, 0.2);
 }
 
-.header-top {
-  top: 40px;
+.parallax {
+  position: relative;
+  background-position: center center;
+  background-attachment: scroll;
+  background-size: cover;
+  background-image: url('../images/parallax/images.jpg');
+  @include breakpoint(900px) {
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+  &::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9) 20%, rgba(255, 255, 255, 0) 40%);
+    z-index: 1;
+  }
 }
