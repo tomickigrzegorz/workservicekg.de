@@ -78,35 +78,37 @@
   font-family: 'Rubik', sans-serif;
   color: $color-gray;
   text-shadow: 0 0 2px $color-black;
+  text-transform: uppercase;
   @include font-size(16);
+  ul {
+    padding: 5px 0 2px 0;
+  }
   li {
     display: inline-block;
+    vertical-align: bottom;
     &:not(:first-child)::before {
       content: "\2022";
       margin-left: 5px;
       padding-right: 7px;
     }
+    &:first-child {
+      padding-left: 5px;
+    }
+    &:last-child {
+      padding-right: 5px;
+    }
   }
   &::before {
     content: "";
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, .6);
     position: absolute;
     left: 0;
     right: 0;
     width: 100%;
-    bottom: -5px;
+    bottom: 0;
     margin: 0 auto;
     z-index: -1;
-    height: 60px;
-    @include breakpoint(xs) {
-      height: 55px;
-    }
-    @include breakpoint(633px) {
-      height: 35px;
-    }
-    @include breakpoint(sm) {
-      height: 30px;
-    }
+    height: 100%;
   }
 }
 

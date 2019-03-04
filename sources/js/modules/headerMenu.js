@@ -31,9 +31,10 @@ function requestTick() {
 function update() {
   if (currentScrollY < lastKnownScrollY) {
     pin();
-  } else if (currentScrollY > lastKnownScrollY) {
-    unpin();
   }
+  // else if (currentScrollY > lastKnownScrollY) {
+  //   unpin();
+  // }
   lastKnownScrollY = currentScrollY;
   ticking = false;
 }
@@ -55,7 +56,7 @@ function unpin() {
   }
 }
 
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
   currentScrollY = window.pageYOffset;
   if (currentScrollY <= 120) {
     document.querySelector('.header-container').classList.add(classes.top);
