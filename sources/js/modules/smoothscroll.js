@@ -7,7 +7,7 @@
  * Released under the MIT License.
  */
 
-(function(global, Factory) {
+(function (global, Factory) {
   var SmoothscrollAnchorPolyfill = new Factory();
   var isESModule = typeof global !== 'undefined' && global.__ESM_MOCK__;
   if (
@@ -32,7 +32,7 @@
        * @typedef {{__forceSmoothscrollAnchorPolyfill__: [boolean]}} GlobalFlag
        * @typedef {Window & GlobalFlag} WindowWithFlag
        * @type {WindowWithFlag} */
-      var w = window,
+      var w = (window),
         d = document,
         docEl = d.documentElement;
     }
@@ -48,7 +48,7 @@
      * @typedef {Object} PolyfillOptions
      * @prop {boolean} [force] Enable despite native support, overrides global flag
      */
-    this.polyfill = function(opts) {
+    this.polyfill = function (opts) {
       opts = opts || {};
       if (isBrowser) {
         var globalFlag = w.__forceSmoothscrollAnchorPolyfill__;
@@ -68,7 +68,7 @@
      * Stops the polyfill by removing all EventListeners
      * @returns {SmoothscrollAnchorPolyfill} Polyfill Instance, allows for chaining
      */
-    this.destroy = function() {
+    this.destroy = function () {
       if (isBrowser) {
         d.removeEventListener('click', handleClick, false);
         d.removeEventListener('scroll', trackScrollPositions);
@@ -85,13 +85,13 @@
       var el = d.createElement('a');
       // Define getter for preventScroll to find out if the browser accesses it
       var preppedFocusOption = Object.defineProperty({}, 'preventScroll', {
-        get: function() {
+        get: function () {
           supportsPreventScroll = true;
         }
       });
       // Trigger focus – if browser uses preventScroll the var will be set to true
       el.focus(preppedFocusOption);
-    } catch (e) {}
+    } catch (e) { }
 
     // Regex to extract the value following the scroll-behavior property name
     var extractValue = /scroll-behavior:[\s]*([^;"`'\s]+)/;
