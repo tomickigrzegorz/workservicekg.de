@@ -52,7 +52,7 @@
     },
     {
       "title": "kontakt",
-      "text": "<div class='contact-item'><div class='address item'>Work Service KG<br>Brünner Straße 10<br>04209 Leipzig</div><div class='phone item'><a href='tel:+4915129826667'><span>Tel: +49 15129826667</span></a></div><div class='mail item'><a href='mailto:info@workservicekg.de'><span>Mail: info@workservicekg.de</span></a></div></div><div class='contact-item'><div class='cotb item'>Prezes Zarządu: Maciej Jan Szklarz</div><div class='law item'>Sąd Rejestrowy w Lipsku</div><div class='number item'>Numer HRA 18264</div><div class='nip item'>NIP: 1111111111111</div></div>"
+      "text": "<div class='contact-item'><div class='address item'>Work Service KG<br>Brünner Straße 10<br>04209 Leipzig</div><div class='phone item'><a href='tel:+4915129826667'><span>Tel: +49 15129826667</span></a></div><div class='mail item'><a href='mailto:info@workservicekg.de'><span>Mail: info@workservicekg.de</span></a></div></div><div class='contact-item'><div class='cotb item'>Prezes Zarządu: Maciej Jan Szklarz</div><div class='law item'>Sąd Rejestrowy w Lipsku</div><div class='number item'>Numer HRA 18264</div></div>"
     }
   ],
   "schema": {

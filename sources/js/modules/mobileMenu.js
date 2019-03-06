@@ -1,11 +1,24 @@
-function showMenuMobile() {
-  const mobileMenu = document.querySelector('.mobile');
+import documentQuerySelector from '../helpers/elements';
+
+export default function mobileMenu(classes) {
+  const {
+    classMenu,
+    classMobile,
+    classMenuOn
+  } = classes;
+
+  const mobileMenu = documentQuerySelector(classMobile);
   const bodyClass = document.body;
+
   mobileMenu.addEventListener('click', () => {
-    document.querySelector('.menu-on')
-      ? bodyClass.classList.remove('menu-on')
-      : bodyClass.classList.add('menu-on');
+    documentQuerySelector(classMenuOn) ?
+      bodyClass.classList.remove(classMenuOn) :
+      bodyClass.classList.add(classMenuOn);
   });
+
+  mmobileManuHide(classMenu, classMenuOn);
 }
 
-window.addEventListener('load', showMenuMobile());
+function mmobileManuHide(classMenu, classMenuOn) {
+  documentQuerySelector(classMenu).addEventListener('click', () => document.body.classList.remove(classMenuOn));
+}
