@@ -162,7 +162,7 @@ module.exports = (env, argv) => {
             cacheId: 'kg',
             dontCacheBustUrlsMatching: /\.\w{8}\./,
             filename: 'sw.js',
-            minify: false,
+            minify: true,
             navigateFallback: PUBLIC_PATH + 'index.html',
             stripPrefix: OUTPUT_DIR,
             staticFileGlobs: [
@@ -172,7 +172,7 @@ module.exports = (env, argv) => {
               `${OUTPUT_DIR}/images/static/*.png`,
               `${OUTPUT_DIR}/images/*.jpg`,
               `${OUTPUT_DIR}/images/*.png`,
-              `${OUTPUT_DIR}/*.html`,
+              // `${OUTPUT_DIR}/*.html`,
               // `${OUTPUT_DIR}/vendor/css/*.css`,
             ],
           }),
