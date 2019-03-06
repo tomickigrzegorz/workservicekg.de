@@ -1,21 +1,14 @@
+import documentQuerySelector from './helpers/elements';
+import {
+  classes
+} from './helpers/constants';
+
 import mobileMenu from './modules/mobileMenu';
 import stickyHeader from './modules/stickyHeader';
-import documentQuerySelector from './helpers/elements';
 import scrollTopButton from './modules/buttonScrolltop';
 import smoothscrollAnchorPolyfill from './modules/smoothscrollAnchorPolyfill';
 
 import '../../sources/scss/style.scss';
-
-const classes = {
-  classScrollButton: 'scroll-button',
-  classHiddenButton: 'scroll-button--hidden',
-  classHeaderContainer: 'header-container',
-  classSticky: 'sticky',
-  classMobile: 'mobile',
-  classMenuOn: 'menu-on',
-  classMenu: 'menu',
-  classDate: 'date-footer'
-};
 
 window.addEventListener('load', () => {
 
