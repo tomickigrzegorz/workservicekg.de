@@ -6372,11 +6372,6 @@ slash@^1.0.0:
   resolved "https://registry.yarnpkg.com/slash/-/slash-1.0.0.tgz#c41f2f6c39fc16d1cd17ad4b5d896114ae470d55"
   integrity sha1-xB8vbDn8FtHNF61LXYlhFK5HDVU=
 
-smoothscroll-anchor-polyfill@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/smoothscroll-anchor-polyfill/-/smoothscroll-anchor-polyfill-1.2.0.tgz#4e22f9f6cc7753e76c1fc9c62e11929172413cf2"
-  integrity sha512-82esQmM7ywB5L8NuW9PZqNuSk9FPZKclfplAVD25sle0FsOKlSsmP7tUCregcGhOuFaeQ2S80vvncquP7bWmEA==
-
 snapdragon-node@^2.0.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/snapdragon-node/-/snapdragon-node-2.1.1.tgz#6c175f86ff14bdb0724563e8f3c1b021a286853b"
