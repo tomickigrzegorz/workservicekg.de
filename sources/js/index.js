@@ -2,7 +2,7 @@ import mobileMenu from './modules/mobileMenu';
 import stickyHeader from './modules/stickyHeader';
 import documentQuerySelector from './helpers/elements';
 import scrollTopButton from './modules/buttonScrolltop';
-import smoothscrollAnchorPolyfill from 'smoothscroll-anchor-polyfill';
+import smoothscrollAnchorPolyfill from './modules/smoothscrollAnchorPolyfill';
 
 import '../../sources/scss/style.scss';
 
