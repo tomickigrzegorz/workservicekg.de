@@ -1,11 +1,7 @@
 import documentQuerySelector from '../helpers/elements';
 
-export default function mobileMenu(classes) {
-  const {
-    classMenu,
-    classMobile,
-    classMenuOn
-  } = classes;
+const MobileMenu = (classes) => {
+  const { classMenu, classMobile, classMenuOn } = classes;
 
   const mobileMenu = documentQuerySelector(classMobile);
   const bodyClass = document.body;
@@ -16,9 +12,11 @@ export default function mobileMenu(classes) {
       bodyClass.classList.add(classMenuOn);
   });
 
-  mmobileManuHide(classMenu, classMenuOn);
-}
+  MobileManuHide(classMenu, classMenuOn);
+};
 
-function mmobileManuHide(classMenu, classMenuOn) {
+const MobileManuHide = (classMenu, classMenuOn) => {
   documentQuerySelector(classMenu).addEventListener('click', () => document.body.classList.remove(classMenuOn));
-}
+};
+
+export default MobileMenu;
