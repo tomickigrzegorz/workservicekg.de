@@ -1,12 +1,12 @@
-import documentQuerySelector from './helpers/elements';
-import { classes } from './helpers/constants';
-
-import MobileMenu from './modules/mobileMenu';
-import StickyHeader from './modules/stickyHeader';
-import ScrollTopButton from './modules/buttonScrolltop';
-import SmoothscrollAnchorPolyfill from './modules/smoothscrollAnchorPolyfill';
-
 import '../../sources/scss/style.scss';
+import { classes } from './helpers/constants';
+import documentQuerySelector from './helpers/elements';
+import ActiveMenu from './modules/activeMenu';
+import ScrollTopButton from './modules/buttonScrolltop';
+import MobileMenu from './modules/mobileMenu';
+import SmoothscrollAnchorPolyfill from './modules/smoothscrollAnchorPolyfill';
+import StickyHeader from './modules/stickyHeader';
+
 
 window.addEventListener('load', () => {
 
@@ -18,6 +18,9 @@ window.addEventListener('load', () => {
 
   // show menu and triggered on mobile devices
   MobileMenu(classes);
+
+  // add class to click item
+  ActiveMenu(classes);
 
   // add sticky class to header-container load
   StickyHeader(classes);

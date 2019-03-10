@@ -6,5 +6,6 @@ export const classes = {
   classMobile: 'mobile',
   classMenuOn: 'menu-on',
   classMenu: 'menu',
-  classDate: 'date-footer'
+  classDate: 'date-footer',
+  classActive: 'active'
 };
