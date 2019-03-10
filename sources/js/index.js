@@ -12,7 +12,7 @@ window.addEventListener('load', () => {
 
   // smoothscroll menu and back-to-top
   const scroll = new SmoothScroll('.scroll a[href*="#"]', {
-    speed: 300
+    speed: 800
   });
   // add full year to footer
   documentQuerySelector(classes.classDate).innerHTML = new Date().getFullYear();
