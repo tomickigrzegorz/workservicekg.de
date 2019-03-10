@@ -44,11 +44,13 @@ mixin header(language)
                         svg(class="logo")
                             use(xlink:href="#logo")
                 .menu.vd
-                    ul
+                    ul.scroll
                         each val, i in path.file.menu
+                            - var anchor = val.text.replace(' ', '-').replace('ü', 'u')
                             li
-                                a(href="#"+val.text.replace(' ', '-'))
+                                a(href="#"+anchor)
                                     = val.text
+
                 .menu-mobile.vm
                     .mobile
                         div.hamburger-on

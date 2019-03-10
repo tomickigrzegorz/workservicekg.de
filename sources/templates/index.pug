@@ -20,7 +20,8 @@ html(lang=path.file.lang dir="ltr" itemscope itemtype="http://schema.org/WebPage
 
         main(class="main")
                 each val, i in path.file.items
-                    section(id=val.title.replace(' ', '-'))
+                    - var anchor = val.title.replace(' ', '-').replace('ü', 'u')
+                    section(id=anchor)
                         .container
                             h2= val.title
                             .section_description!= val.text

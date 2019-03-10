@@ -1,9 +1,9 @@
-import documentQuerySelector from '../helpers/elements';
+import { documentQuerySelector } from '../helpers/elements';
 
 const ScrollTopButton = (classes) => {
-  const { classScrollButton, classHiddenButton } = classes;
+  const { classScrollButton, classHiddenButton, classScroll } = classes;
 
-  ScrollTopButtonCreare(classScrollButton, classHiddenButton);
+  ScrollTopButtonCreare(classScrollButton, classHiddenButton, classScroll);
 
   window.addEventListener('scroll', () => {
     const scrollbutton = documentQuerySelector(classScrollButton);
@@ -15,10 +15,14 @@ const ScrollTopButton = (classes) => {
 
 };
 
-const ScrollTopButtonCreare = (buttonName, hiddenName) => {
-  const button = document.createElement('a');
-  button.classList.add(buttonName, hiddenName);
-  button.setAttribute('href', '#top');
+const ScrollTopButtonCreare = (buttonName, hiddenName, classScroll) => {
+  const button = document.createElement('div');
+  const template = `
+    <div class="${classScroll}">
+      <a href="#top" class="${buttonName} ${hiddenName}"></a>
+    </div>
+  `;
+  button.innerHTML = template;
   document.body.appendChild(button);
 };
 

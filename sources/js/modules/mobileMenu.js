@@ -1,4 +1,4 @@
-import documentQuerySelector from '../helpers/elements';
+import { documentQuerySelector } from '../helpers/elements';
 
 const MobileMenu = (classes) => {
   const { classMenu, classMobile, classMenuOn } = classes;

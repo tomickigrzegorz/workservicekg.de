@@ -7,5 +7,6 @@ export const classes = {
   classMenuOn: 'menu-on',
   classMenu: 'menu',
   classDate: 'date-footer',
-  classActive: 'active'
+  classActive: 'active',
+  classScroll: 'scroll'
 };

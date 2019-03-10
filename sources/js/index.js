@@ -1,18 +1,19 @@
+import SmoothScroll from 'smooth-scroll';
 import '../../sources/scss/style.scss';
 import { classes } from './helpers/constants';
-import documentQuerySelector from './helpers/elements';
+import { documentQuerySelector } from './helpers/elements';
 import ActiveMenu from './modules/activeMenu';
 import ScrollTopButton from './modules/buttonScrolltop';
 import MobileMenu from './modules/mobileMenu';
-import SmoothscrollAnchorPolyfill from './modules/smoothscrollAnchorPolyfill';
 import StickyHeader from './modules/stickyHeader';
 
 
 window.addEventListener('load', () => {
 
   // smoothscroll menu and back-to-top
-  SmoothscrollAnchorPolyfill.polyfill();
-
+  const scroll = new SmoothScroll('.scroll a[href*="#"]', {
+    speed: 300
+  });
   // add full year to footer
   documentQuerySelector(classes.classDate).innerHTML = new Date().getFullYear();
 
