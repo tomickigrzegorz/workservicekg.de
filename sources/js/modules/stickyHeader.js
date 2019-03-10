@@ -5,7 +5,10 @@ const StickyHeader = (classes) => {
 
   const headerContainer = documentQuerySelector(classHeaderContainer);
   const currentScrollY = window.pageYOffset;
-  (currentScrollY <= 120) ?
+
+  const heightTop = documentQuerySelector('header-container').offsetHeight - 40;
+
+  (currentScrollY <= heightTop) ?
     headerContainer.classList.remove(classSticky) : headerContainer.classList.add(classSticky);
 };
 
