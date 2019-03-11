@@ -1,7 +1,7 @@
 RewriteEngine On
 RewriteBase /
 RewriteCond %{HTTP_HOST} ^workservicekg.de [NC]
-RewriteRule ^(.*)$ http://www.workservicekg.de$1 [L,R=301]
+RewriteRule ^(.*)$ http://www.workservicekg.de/$1 [L,R=301]
 
 <IfModule mod_deflate.c>
   # Compress HTML, CSS, JavaScript, Text, XML and fonts
