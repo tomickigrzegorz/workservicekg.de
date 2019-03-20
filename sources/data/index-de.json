@@ -4,7 +4,7 @@
     "description": "Wir stellen Fach- und Hilfskräfte aus Osteuropa und Asien an. Es sind hochqualifizierte Mitarbeiter mit jahrelanger Erfahrung. Ihr Wissen wurde mit praktischen Fertigkeiten ergänzt. Jede Gruppe von Mitarbeitern hat ihren Koordinator, der über Grunddeutschkenntnisse verfügt. Alle Fachkräfte können technische Zeichnungen lesen."
   },
   "lang": "de",
-  "tel": "+49 15129826667",
+  "tel": "+49 1759298244",
   "mail": "info@workservicekg.de",
   "titleBig": "was können<br> wir für sie tun?",
   "keywords": [
@@ -52,7 +52,7 @@
     },
     {
       "title": "impressum",
-      "text": "<div class='contact-item'><div class='address item'>Work Service KG<br>Brünner Straße 10<br>04209 Leipzig</div><div class='phone item'><a href='tel:+4915129826667'><span>Tel: +49 15129826667</span></a></div><div class='mail item'><a href='mailto:info@workservicekg.de'><span>Mail: info@workservicekg.de</span></a></div></div><div class='contact-item'><div class='cotb item'>Geschäftsführer: Maciej Jan Szklarz</div><div class='law item'>Registergericht: Amtsgericht Leipzig</div><div class='number item'>Registernummer: HRA 18264</div></div>"
+      "text": "<div class='contact-item'><div class='address item'>Work Service KG<br>Brünner Straße 10<br>04209 Leipzig</div><div class='phone item'><a href='tel:+491759298244' title='tel'><span>Tel: +49 1759298244</span></a></div><div class='mail item'><a href='mailto:info@workservicekg.de' title='mail'><span>Mail: info@workservicekg.de</span></a></div></div><div class='contact-item'><div class='cotb item'>Geschäftsführer: Maciej Jan Szklarz</div><div class='law item'>Registergericht: Amtsgericht Leipzig</div><div class='number item'>Registernummer: HRA 18264</div></div>"
     }
   ],
   "schema": {

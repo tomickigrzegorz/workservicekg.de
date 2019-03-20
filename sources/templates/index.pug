@@ -27,13 +27,13 @@ html(lang=path.file.lang dir="ltr" itemscope itemtype="http://schema.org/WebPage
                             .section_description!= val.text
                                 if i === 1
                                     .phone
-                                        a(href="tel:" + tel)
+                                        a(href="tel:" + tel, title="tel")
                                             svg(class="icon")
                                                 use(xlink:href="#icon-phone")
                                             span= path.file.tel
 
                                     .mail
-                                        a(href="mailto:" + path.file.mail)
+                                        a(href="mailto:" + path.file.mail, title="mail")
                                             svg(class="icon")
                                                 use(xlink:href="#icon-mail")
                                             span= path.file.mail

@@ -17,14 +17,14 @@ mixin header(language)
         .container
             .top-container
                 .phone
-                    a(href="tel:" +  tel)
+                    a(href="tel:" +  tel, title="tel")
                         svg(class="icon")
                             use(xlink:href="#icon-phone")
                         span.vd= path.file.tel
                         span.vm Telefon
 
                 .mail
-                    a(href="mailto:" + path.file.mail)
+                    a(href="mailto:" + path.file.mail, text="mail")
                         svg(class="icon")
                             use(xlink:href="#icon-mail")
                         span.vd= path.file.mail
@@ -40,7 +40,7 @@ mixin header(language)
         .header-container
             .header-top
                 .logo.scroll
-                    a(href="#top")
+                    a(href="#top", title="WorkService KG")
                         svg(class="logo")
                             use(xlink:href="#logo")
                 .menu.vd
@@ -48,7 +48,7 @@ mixin header(language)
                         each val, i in path.file.menu
                             - var anchor = val.text.replace(' ', '-').replace('ü', 'u')
                             li
-                                a(href="#"+anchor)
+                                a(href="#"+anchor, title=val.text.toUpperCase())
                                     = val.text
 
                 .menu-mobile.vm
