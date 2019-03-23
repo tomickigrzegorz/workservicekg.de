@@ -1,4 +1,3 @@
-
 const ActiveMenu = (classes) => {
   const { classMenu, classActive } = classes;
 
