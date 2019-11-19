@@ -7,7 +7,7 @@ import MobileMenu from './modules/mobileMenu';
 import ScrollTopButton from './modules/buttonScrolltop';
 import StickyHeader from './modules/stickyHeader';
 
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('load', () => {
   // smoothscroll menu and back-to-top
   const scroll = new SmoothScroll('.scroll a[href*="#"]', {
     speed: 800,
