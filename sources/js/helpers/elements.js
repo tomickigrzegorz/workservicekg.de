@@ -1,3 +1,5 @@
-export function documentQuerySelector(selector) {
+const documentQuerySelector = selector => {
   return document.querySelector(`.${selector}`);
 };
+
+export default documentQuerySelector;

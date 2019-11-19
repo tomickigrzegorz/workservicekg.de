@@ -1,15 +1,17 @@
-import { documentQuerySelector } from '../helpers/elements';
+import documentQuerySelector from '../helpers/elements';
 
-const StickyHeader = (classes) => {
-  const { classHeaderContainer, classSticky } = classes;
-
+const StickyHeader = ({ classHeaderContainer, classSticky }) => {
   const headerContainer = documentQuerySelector(classHeaderContainer);
   const currentScrollY = window.pageYOffset;
 
-  const heightTop = documentQuerySelector('header-container').offsetHeight - 40;
+  const heightTop =
+    documentQuerySelector(classHeaderContainer).offsetHeight - 40;
 
-  (currentScrollY <= heightTop) ?
-    headerContainer.classList.remove(classSticky) : headerContainer.classList.add(classSticky);
+  if (currentScrollY <= heightTop) {
+    headerContainer.classList.remove(classSticky);
+  } else {
+    headerContainer.classList.add(classSticky);
+  }
 };
 
 export default StickyHeader;

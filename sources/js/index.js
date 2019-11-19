@@ -1,18 +1,17 @@
+import '../scss/style.scss';
 import SmoothScroll from 'smooth-scroll';
-import '../../sources/scss/style.scss';
-import { classes } from './helpers/constants';
-import { documentQuerySelector } from './helpers/elements';
+import classes from './helpers/constants';
 import ActiveMenu from './modules/activeMenu';
-import ScrollTopButton from './modules/buttonScrolltop';
+import documentQuerySelector from './helpers/elements';
 import MobileMenu from './modules/mobileMenu';
+import ScrollTopButton from './modules/buttonScrolltop';
 import StickyHeader from './modules/stickyHeader';
 
-
-window.addEventListener('load', () => {
-
+window.addEventListener('DOMContentLoaded', () => {
   // smoothscroll menu and back-to-top
   const scroll = new SmoothScroll('.scroll a[href*="#"]', {
-    speed: 800
+    speed: 800,
+    offset: 50,
   });
   // add full year to footer
   documentQuerySelector(classes.classDate).innerHTML = new Date().getFullYear();
@@ -33,5 +32,4 @@ window.addEventListener('load', () => {
 
   // add scroll button to body
   ScrollTopButton(classes);
-
 });

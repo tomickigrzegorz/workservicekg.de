@@ -1,4 +1,4 @@
-export const classes = {
+const classes = {
   classScrollButton: 'scroll-button',
   classHiddenButton: 'scroll-button--hidden',
   classHeaderContainer: 'header-container',
@@ -8,5 +8,7 @@ export const classes = {
   classMenu: 'menu',
   classDate: 'date-footer',
   classActive: 'active',
-  classScroll: 'scroll'
+  classScroll: 'scroll',
 };
+
+export default classes;

@@ -26,6 +26,90 @@ const uglifyjsplugin = {
   ]
 }
 
+// Configure Babel Loader
+const configureBabelLoader = () => {
+  return {
+    test: /\.js$/,
+    exclude: /node_modules/,
+    use: {
+      loader: 'babel-loader'
+    }
+  }
+}
+
+// Configure Html Loader
+const configureHtmlLoader = (mode) => {
+  return {
+    test: /\.html$/,
+    use: [{
+      loader: 'html-loader',
+      options: {
+        minimize: mode === 'development' ? false : true
+      }
+    }]
+  }
+}
+
+// Configure Style Loader
+const configureStyleLoader = (mode) => {
+  return {
+    test: /\.(css|sass|scss)$/,
+    use: [
+      mode === 'development' ?
+        'style-loader' :
+        MiniCssExtractPlugin.loader,
+      {
+        loader: 'css-loader',
+        options: {
+          importLoaders: 2,
+          sourceMap: true
+        }
+      },
+      {
+        loader: 'postcss-loader',
+        options: {
+          sourceMap: true,
+          config: {
+            path: './config/'
+          }
+        }
+      },
+      {
+        loader: 'sass-loader',
+        options: {
+          sourceMap: true
+        }
+      }
+    ]
+  }
+}
+
+// Configure File Loader
+const configureFileLoader = (imageModeFileLoader) => {
+  return {
+    test: /\.(jpe?g|png|gif|svg)$/i,
+    loader: 'file-loader',
+    options: {
+      name: '[name]-[hash:8].[ext]',
+      outputPath: imageModeFileLoader,
+      publicPath: imageModeFileLoader,
+      useRelativePath: true
+    }
+  }
+}
+
+// Configure Pug Loader
+const configurePugLoader = () => {
+  return {
+    test: /\.pug$/,
+    loader: 'pug-loader',
+    options: {
+      pretty: true,
+      self: true
+    }
+  }
+}
+
 module.exports = (env, argv) => {
 
   const imageModeFileLoader = argv.mode === 'production' ? './images/' : ''
@@ -47,6 +131,7 @@ module.exports = (env, argv) => {
         minify: false
       };
 
+  // HtmlWebPackPlugin
   const entryHtmlPlugins = Object.keys(ENTRY.html).map(entryName => {
     const fileName = entryName === 'index-de' ? 'index' : 'index-pl';
     return new HtmlWebPackPlugin({
@@ -57,7 +142,6 @@ module.exports = (env, argv) => {
       minify: type.minify,
       mode: type.mode,
       inlineSource: '.(css)$'
-      // inlineSource: '.(js|css)$',
     });
   });
 
@@ -71,76 +155,12 @@ module.exports = (env, argv) => {
     entry: ENTRY.html,
     output: output,
     module: {
-      rules: [{
-        // JS
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader'
-        }
-      },
-      {
-        // HTML
-        test: /\.html$/,
-        use: [{
-          loader: 'html-loader',
-          options: {
-            minimize: argv.mode === 'development' ? false : true
-          }
-        }]
-      },
-      {
-        // CSS SASS SCSS
-        test: /\.(css|sass|scss)$/,
-        use: [
-          argv.mode === 'development' ?
-            'style-loader' :
-            MiniCssExtractPlugin.loader,
-          {
-            loader: 'css-loader',
-            options: {
-              importLoaders: 2,
-              sourceMap: true
-            }
-          },
-          {
-            loader: 'postcss-loader',
-            options: {
-              sourceMap: true,
-              config: {
-                path: './config/'
-              }
-            }
-          },
-          {
-            loader: 'sass-loader',
-            options: {
-              sourceMap: true
-            }
-          }
-        ]
-      },
-      {
-        // IMAGES
-        test: /\.(jpe?g|png|gif|svg)$/i,
-        loader: 'file-loader',
-        options: {
-          name: '[name]-[hash:8].[ext]',
-          outputPath: imageModeFileLoader,
-          publicPath: imageModeFileLoader,
-          // publicPath: argv.mode === 'production' ? '../../images/' : '',
-          useRelativePath: true
-        }
-      },
-      {
-        // PUG
-        test: /\.pug$/,
-        loader: 'pug-loader',
-        options: {
-          pretty: true,
-          self: true
-        }
-      }
+      rules: [
+        configureBabelLoader(),
+        configureHtmlLoader(argv.mode),
+        configureStyleLoader(argv.mode),
+        configureFileLoader(imageModeFileLoader),
+        configurePugLoader()
       ]
     },
     optimization: uglifyjsplugin,
@@ -171,34 +191,18 @@ module.exports = (env, argv) => {
             `${OUTPUT_DIR}/vendor/js/*.js`,
             `${OUTPUT_DIR}/images/static/*.png`,
             `${OUTPUT_DIR}/images/*.jpg`,
-            `${OUTPUT_DIR}/images/*.png`,
-            // `${OUTPUT_DIR}/*.html`,
-            // `${OUTPUT_DIR}/vendor/css/*.css`,
+            `${OUTPUT_DIR}/images/*.png`
           ],
         }),
         argv
       ),
       prodPlugin(
-        new CopyWebpackPlugin([{
-          from: 'sources/assets/',
-          to: 'assets/'
-        },
-        {
-          from: 'sources/images/static/',
-          to: 'images/static'
-        },
-        {
-          from: 'sources/assets/favicon.ico',
-          to: './'
-        },
-        {
-          from: 'sources/assets/.htaccess',
-          to: './'
-        },
-        {
-          from: 'sources/assets/robots.txt',
-          to: './'
-        },
+        new CopyWebpackPlugin([
+          { from: 'sources/assets/', to: 'assets/' },
+          { from: 'sources/images/static/', to: 'images/static' },
+          { from: 'sources/assets/favicon.ico', to: './' },
+          { from: 'sources/assets/.htaccess', to: './' },
+          { from: 'sources/assets/robots.txt', to: './' },
         ]),
         argv
       )
@@ -213,15 +217,14 @@ module.exports = (env, argv) => {
         )
       )
       .concat(prodPlugin(new HtmlWebpackInlineSourcePlugin(), argv))
-
-    // .concat(
-    //   prodPlugin(
-    //     new BundleAnalyzerPlugin({
-    //       openAnalyzer: true
-    //     }),
-    //     argv
-    //   )
-    // )
+      .concat(
+        prodPlugin(
+          new BundleAnalyzerPlugin({
+            openAnalyzer: true
+          }),
+          argv
+        )
+      )
   };
 };
 
