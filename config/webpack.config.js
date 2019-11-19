@@ -1,13 +1,13 @@
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const PUBLIC_PATH = 'http://www.workservicekg.de';
 
