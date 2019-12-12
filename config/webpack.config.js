@@ -1,15 +1,15 @@
 const path = require('path');
+
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const WorkboxPlugin = require('workbox-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-
-const PUBLIC_PATH = 'http://www.workservicekg.de';
+const { devPlugin, devProdOption, prodPlugin } = require('./helper');
 
 const ENTRY = require('./entry.js');
 const OUTPUT_DIR = 'dist';
@@ -98,6 +98,26 @@ const configureFileLoader = (imageModeFileLoader) => {
   }
 }
 
+// Configure SW
+const configureSW = () => {
+  return {
+    swDest: 'sw.js',
+    clientsClaim: true,
+    skipWaiting: true,
+  }
+}
+
+// Configure CopyWebpack
+const configureCopy = () => {
+  return [
+    { from: 'sources/assets/', to: 'assets/' },
+    { from: 'sources/images/static/', to: 'images/static' },
+    { from: 'sources/assets/favicon.ico', to: './' },
+    { from: 'sources/assets/.htaccess', to: './' },
+    { from: 'sources/assets/robots.txt', to: './' },
+  ]
+}
+
 // Configure Pug Loader
 const configurePugLoader = () => {
   return {
@@ -116,7 +136,7 @@ module.exports = (env, argv) => {
 
   const type =
     argv.mode === 'production' ? {
-      pathToDist: '../dist',
+      pathToDist: `../${OUTPUT_DIR}`,
       mode: 'production',
       minify: {
         removeComments: true,
@@ -146,7 +166,7 @@ module.exports = (env, argv) => {
   });
 
   const output = {
-    path: path.resolve(__dirname, '../dist'),
+    path: path.resolve(__dirname, `../${OUTPUT_DIR}`),
     filename: 'vendor/js/index.[hash].js'
   };
 
@@ -178,34 +198,17 @@ module.exports = (env, argv) => {
         argv
       ),
       prodPlugin(
-        new SWPrecacheWebpackPlugin({
-          cacheId: 'kg',
-          dontCacheBustUrlsMatching: /\.\w{8}\./,
-          filename: 'sw.js',
-          minify: true,
-          navigateFallback: PUBLIC_PATH + 'index.html',
-          stripPrefix: OUTPUT_DIR,
-          staticFileGlobs: [
-            `${OUTPUT_DIR}/assets/manifest.json`,
-            `${OUTPUT_DIR}/favicon.ico`,
-            `${OUTPUT_DIR}/vendor/js/*.js`,
-            `${OUTPUT_DIR}/images/static/*.png`,
-            `${OUTPUT_DIR}/images/*.jpg`,
-            `${OUTPUT_DIR}/images/*.png`
-          ],
-        }),
+        new WorkboxPlugin.GenerateSW(
+          configureSW()
+        ),
         argv
       ),
       prodPlugin(
-        new CopyWebpackPlugin([
-          { from: 'sources/assets/', to: 'assets/' },
-          { from: 'sources/images/static/', to: 'images/static' },
-          { from: 'sources/assets/favicon.ico', to: './' },
-          { from: 'sources/assets/.htaccess', to: './' },
-          { from: 'sources/assets/robots.txt', to: './' },
-        ]),
+        new CopyWebpackPlugin(
+          configureCopy()
+        ),
         argv
-      )
+      ),
     ]
       .concat(entryHtmlPlugins)
       .concat(
@@ -227,15 +230,3 @@ module.exports = (env, argv) => {
       )
   };
 };
-
-function devProdOption(dev, prod, argv) {
-  return argv.mode === 'development' ? dev : prod;
-}
-
-function prodPlugin(plugin, argv) {
-  return argv.mode === 'production' ? plugin : () => { };
-}
-
-function devPlugin(plugin, argv) {
-  return argv.mode === 'development' ? plugin : () => { };
-}
