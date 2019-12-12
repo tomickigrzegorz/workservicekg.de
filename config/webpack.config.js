@@ -9,7 +9,7 @@ const WorkboxPlugin = require('workbox-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const { devPlugin, devProdOption, prodPlugin } = require('./helper');
+const { devPlugin, devProdOption, prodPlugin } = require('./helpers');
 
 const ENTRY = require('./entry.js');
 const OUTPUT_DIR = 'dist';
